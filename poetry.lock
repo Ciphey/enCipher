@@ -4,7 +4,7 @@ description = ""
 name = "cipheycore"
 optional = false
 python-versions = ">=3.5,<4.0"
-version = "0.1.5rc4"
+version = "0.3.1"
 
 [[package]]
 category = "main"
@@ -23,21 +23,22 @@ python-versions = "*"
 version = "2.7"
 
 [metadata]
-content-hash = "f5e8e04f60329b8852b2aac98898313daf59c5bb61c05046bba995c740cd935a"
+content-hash = "416f3f73c99986181e7e39eb26ed4b1fa1ddb012b58e83709cd5f05457aeeb48"
+lock-version = "1.0"
 python-versions = "^3.8"
 
 [metadata.files]
 cipheycore = [
-    {file = "cipheycore-0.1.5rc4-cp35-cp35m-manylinux2014_x86_64.whl", hash = "sha256:cf2f00b9b08c0a87536d6a36560bbff8809220d2e225796c4243287844a747d0"},
-    {file = "cipheycore-0.1.5rc4-cp35-cp35m-win_amd64.whl", hash = "sha256:b1c8682d3a4abad23e7c6a1b316b58a694a11823ef410070ff0492e69a4c434d"},
-    {file = "cipheycore-0.1.5rc4-cp36-cp36m-manylinux2014_x86_64.whl", hash = "sha256:d8006a771d7c775e31b1c9b61f6889b11b7ed8e61e2eff89a7b25c64cc9a89e0"},
-    {file = "cipheycore-0.1.5rc4-cp36-cp36m-win_amd64.whl", hash = "sha256:354ac7e9f0c7507f1bac6787654f939e6fa01d4c8eda871ed33200c814b01027"},
-    {file = "cipheycore-0.1.5rc4-cp37-cp37m-macosx_10_15_x86_64.whl", hash = "sha256:67e53eb3e04e0dd4462ae1c5ad563c7a1e3db6e811d481ba59e7d108add019bf"},
-    {file = "cipheycore-0.1.5rc4-cp37-cp37m-manylinux2014_x86_64.whl", hash = "sha256:6674570bb6851184e4f0f9547639a5ec64c871eaf0984b8df589f23cf95a3513"},
-    {file = "cipheycore-0.1.5rc4-cp37-cp37m-win_amd64.whl", hash = "sha256:44421ee4d63a86f26c2e4c3139f92fd704e1b9299c8d07259b44387e724498af"},
-    {file = "cipheycore-0.1.5rc4-cp38-cp38-macosx_10_15_x86_64.whl", hash = "sha256:34ff7430173c894afb3aed9c2efd3c29fa16d17fd59311fa8184a779d290a870"},
-    {file = "cipheycore-0.1.5rc4-cp38-cp38-manylinux2014_x86_64.whl", hash = "sha256:20b32e2791202ecb8a8ba348104d4ed145b60154e659e5c7e43752b828dc9791"},
-    {file = "cipheycore-0.1.5rc4-cp38-cp38-win_amd64.whl", hash = "sha256:4262d1ab898b024d1e262aedcfd42a960bb305b4277799ba2caaa3eec98844c0"},
+    {file = "cipheycore-0.3.1-cp35-cp35m-manylinux2014_x86_64.whl", hash = "sha256:cc65251f0a66aaaaf034d115a8b8e99081f97f5330bbd6ead13722ee30d0fa8a"},
+    {file = "cipheycore-0.3.1-cp35-cp35m-win_amd64.whl", hash = "sha256:264bae721b938b6c4f2f646e7345abe3495801adcddbe59a19a4d3d4f3182234"},
+    {file = "cipheycore-0.3.1-cp36-cp36m-manylinux2014_x86_64.whl", hash = "sha256:4253356201dc894881aa85aa495edf42f33c08dc1737f4190db9d2046bdbb396"},
+    {file = "cipheycore-0.3.1-cp36-cp36m-win_amd64.whl", hash = "sha256:0459c41fdaf84237f6747973c213fe5e6e325ea348478d53900393722dc2ca3d"},
+    {file = "cipheycore-0.3.1-cp37-cp37m-macosx_10_15_x86_64.whl", hash = "sha256:c2ec5e3c8d08b9f72ca427b00daa840a46dce720e8c2f2d2eb6e6b164fbbcdbf"},
+    {file = "cipheycore-0.3.1-cp37-cp37m-manylinux2014_x86_64.whl", hash = "sha256:7bf313589dc3aacc34a1d7a14a232f4d2aa9a63336cef9f7b52ad21e8b0da75c"},
+    {file = "cipheycore-0.3.1-cp37-cp37m-win_amd64.whl", hash = "sha256:fa87d6a1bc066e6f845923ca886f940737d9111e7e73443269e143c7f80344cf"},
+    {file = "cipheycore-0.3.1-cp38-cp38-macosx_10_15_x86_64.whl", hash = "sha256:370eecd7c8e17799f68a7f9e9849577b5ee1a1685c6d6b1463b833c923497528"},
+    {file = "cipheycore-0.3.1-cp38-cp38-manylinux2014_x86_64.whl", hash = "sha256:7363060fa52728e1cd70f41eb429a3da31a7fd761a89f4bcfa456717b5743e29"},
+    {file = "cipheycore-0.3.1-cp38-cp38-win_amd64.whl", hash = "sha256:08016dbafcb0fab5ec46c575c998ae7ec73a3cece2e2c50cadc1c8cc126bd8a2"},
 ]
 cipheydists = [
     {file = "cipheydists-0.1.3-py3-none-any.whl", hash = "sha256:d6f2632b3cd895ae5b36a30a85d21c55157426a5371bd60f70a6f7af9a3edb15"},
