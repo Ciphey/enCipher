@@ -1,42 +1,149 @@
+from rich import print
 import random
 import nltk
 from nltk.tokenize.treebank import TreebankWordDetokenizer
 import random
 import base64
+import click
 import binascii
 import cipheydists
 import string
 import cipheycore
-import cipheydists
+
+key = False
+
+@click.command()
+@click.argument('key', nargs=-1) #Allows extra parameters like key for caesar cipherc but in tuple form
+@click.option(
+    "-t", "--text", help="Outputs plaintext for debugging purposes.", type=str, 
+)
+
+@click.option(
+    "-r", "--reverse", help="Outputs reversed text", type=str, 
+)
+
+@click.option(
+    "-b64", "--base64", help="Outputs text in base 64", type=str, 
+)
+
+@click.option(
+    "-c", "--caesar", help="Outputs text in caesar cipher (You can specify shift amount)", type=str,
+)
+
+@click.option(
+    "-o", "--rotation", help="Input: a letter, Outputs a character in a rotation (Can be specified by key)", type=str,
+)
+
+@click.option(
+    "-b32", "--base32", help="Outputs text in base 32", type=str, 
+)
+
+@click.option(
+    "-b16", "--base16", help="Outputs text in base 16", type=str, 
+)
+
+@click.option(
+    "-b", "--binary", help="Outputs text in binary", type=str, 
+)
+
+@click.option(
+    "-a", "--ascii", help="Outputs text in ascii", type=str, 
+)
+
+@click.option(
+    "-h", "--hex", help="Outputs text in hexadecimal", type=str, 
+)
+
+@click.option(
+    "-m", "--morse", help="Outputs text in morse code", type=str, 
+)
+
+@click.option(
+    "-r", "--reverse", help="Outputs text in reverse", type=str, 
+)
+
+@click.option(
+    "-v", "--vigenere", help="Outputs text in vigenere", type=str, 
+)
+
+def main(**kwarks):
+    encipher.__init__(encipher)
+    print("Output: ", encipher.main(encipher, **kwarks))
 
 
 class encipher:
 
     """Generates encrypted text. Used for the NN and test_generator"""
 
-    def __init__(self):  # pragma: no cover
-        """Inits the encipher object """
-        self.text = self.read_text()
-        self.MAX_SENTENCE_LENGTH = 5
-        # ntlk.download("punkt")
+    def main(self, **kwarks):
         self.crypto = encipher_crypto()
 
-    def read_text(self):  # pragma: no cover
-        f = open("hansard.txt", encoding="ISO-8859-1")
-        x = f.read()
-        splits = nltk.tokenize.sent_tokenize(x)
-        return splits
+        print("",kwarks) #Enable to help with debugging
+        if kwarks["text"] is not None:
+            return kwarks["text"]
 
-    def getRandomSentence(self):  # pragma: no cover
-        return TreebankWordDetokenizer().detokenize(
-            random.sample(self.text, random.randint(1, self.MAX_SENTENCE_LENGTH))
-        )
+        elif kwarks["reverse"] is not None:
+            return self.crypto.Reverse(kwarks["reverse"]) 
 
-    def getRandomEncryptedSentence(self):  # pragma: no cover
-        sents = self.getRandomSentence()
+        elif kwarks["base64"] is not None:
+            return self.crypto.Base64(kwarks["base64"]) 
 
-        sentsEncrypted = self.crypto.randomEncrypt(sents)
-        return {"PlainText Sentences": sents, "Encrypted Texts": sentsEncrypted}
+        elif kwarks["caesar"] is not None:              #\/Takes key out of tuple
+            return self.crypto.Caesar(kwarks["caesar"], int(kwarks["key"][0])) 
+        
+        elif kwarks["rotation"] is not None:                   #\/Input is supposed to be a letter, this way ensures that an error is not thrown
+            return self.crypto.apply_rotation(kwarks["rotation"][0], int(kwarks["key"][0])) 
+
+        elif kwarks["base32"] is not None:
+            return self.crypto.Base32(kwarks["base32"]) 
+
+        elif kwarks["base16"] is not None:
+            return self.crypto.Base16(kwarks["base16"]) 
+            
+        elif kwarks["binary"] is not None:
+            return self.crypto.Binary(kwarks["binary"])
+
+        elif kwarks["ascii"] is not None:
+            return self.crypto.Ascii(kwarks["ascii"])
+
+        elif kwarks["ascii"] is not None:
+            return self.crypto.Ascii(kwarks["ascii"])
+
+        elif kwarks["hex"] is not None:
+            return self.crypto.Hex(kwarks["hex"])
+
+        elif kwarks["morse"] is not None:
+            return self.crypto.MorseCode(kwarks["morse"])
+
+        elif kwarks["reverse"] is not None:
+            return self.crypto.Reverse(kwarks["reverse"])
+
+        elif kwarks["vigenere"] is not None:
+            return self.crypto.Vigenere(kwarks["vigenere"])
+
+    #def __init__(self):  # pragma: no cover
+        """Inits the encipher object """
+        #self.text = self.read_text()
+        #self.MAX_SENTENCE_LENGTH = 5
+        # ntlk.download("punkt")
+        #self.crypto = encipher_crypto()
+
+    #def read_text(self):  # pragma: no cover
+        #f = open("hansard.txt", encoding="ISO-8859-1")
+        #x = f.read()
+        #splits = nltk.tokenize.sent_tokenize(x)
+        #return splits
+
+    #def getRandomSentence(self):  # pragma: no cover
+        #return TreebankWordDetokenizer().detokenize(
+        #    random.sample(self.text, random.randint(1, self.MAX_SENTENCE_LENGTH))
+        #)
+
+    #def getRandomEncryptedSentence(self):  # pragma: no cover
+        #sents = self.getRandomSentence()
+
+        #sentsEncrypted = self.crypto.randomEncrypt(sents)
+        #return {"PlainText Sentences": sents, "Encrypted Texts": sentsEncrypted}
 
 
 class encipher_crypto:  # pragma: no cover
@@ -62,7 +169,7 @@ class encipher_crypto:  # pragma: no cover
             self.Reverse,
             self.Vigenere,
         ]
-        self.morse_dict = dict(cipheydists.get_charset("morse"))
+        self.morse_dict = dict(cipheydists.get_translate("morse"))
         self.letters = string.ascii_lowercase
         self.group = cipheydists.get_charset("english")["lcase"]
 
@@ -96,7 +203,8 @@ class encipher_crypto:  # pragma: no cover
         return base64.b64encode(bytes(text, "utf-8")).decode("utf-8")
 
     def Caesar(self, s, k):  # pragma: no cover
-        """Iterates through each letter and constructs the cipher text"""
+        """Iterates through each letter and constructs the cipher text
+           s is plaintext and k is shift amount"""
         new_message = ""
         facr = k % 26
         for c in s:
