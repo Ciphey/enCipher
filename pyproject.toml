@@ -5,11 +5,16 @@ description = "Randomly chooses an encryption"
 authors = ["Brandon <brandon@skerritt.blog>"]
 license = "MIT"
 
+[tool.poetry.scripts]
+enciphey = "src.enciphey:main"
+
 [tool.poetry.dependencies]
 python = "^3.8"
 unicode = "^2.7"
-cipheycore = {version = "^0.1.5-rc.4", allow-prereleases = true}
-cipheydists = {version = "^0.1.3", allow-prereleases = true}
+cipheycore = {version = "^0.3.0", allow-prereleases = true}
+cipheydists = {version = "^0.3.22", allow-prereleases = true}
+nltk = "^3.5"
+rich = "^8.0.0"
 
 [tool.poetry.dev-dependencies]
 
