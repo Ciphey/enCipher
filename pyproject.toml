@@ -8,7 +8,7 @@ license = "MIT"
 [tool.poetry.dependencies]
 python = "^3.8"
 unicode = "^2.7"
-cipheycore = {version = "^0.1.5-rc.4", allow-prereleases = true}
+cipheycore = {version = ">=0.1.5,<0.4.0", allow-prereleases = true}
 cipheydists = {version = "^0.1.3", allow-prereleases = true}
 
 [tool.poetry.dev-dependencies]
