@@ -1,30 +1,31 @@
 [[package]]
-category = "main"
-description = ""
 name = "cipheycore"
-optional = false
-python-versions = ">=3.5,<4.0"
 version = "0.1.5rc4"
-
-[[package]]
+description = ""
 category = "main"
-description = "A collection of distributions, character sets and dictionaries for use in ciphey"
-name = "cipheydists"
 optional = false
 python-versions = ">=3.5,<4.0"
-version = "0.1.3"
 
 [[package]]
+name = "cipheydists"
+version = "0.3.34"
+description = "A collection of distributions, character sets and dictionaries for use in ciphey"
 category = "main"
-description = "Display unicode character properties"
+optional = false
+python-versions = ">=3.5,<4.0"
+
+[[package]]
 name = "unicode"
+version = "2.7"
+description = "Display unicode character properties"
+category = "main"
 optional = false
 python-versions = "*"
-version = "2.7"
 
 [metadata]
-content-hash = "f5e8e04f60329b8852b2aac98898313daf59c5bb61c05046bba995c740cd935a"
+lock-version = "1.1"
 python-versions = "^3.8"
+content-hash = "01e46647eb781ab2dfd1fe40b02c3f59040c7476533996ec0a29264d6919daec"
 
 [metadata.files]
 cipheycore = [
@@ -40,8 +41,8 @@ cipheycore = [
     {file = "cipheycore-0.1.5rc4-cp38-cp38-win_amd64.whl", hash = "sha256:4262d1ab898b024d1e262aedcfd42a960bb305b4277799ba2caaa3eec98844c0"},
 ]
 cipheydists = [
-    {file = "cipheydists-0.1.3-py3-none-any.whl", hash = "sha256:d6f2632b3cd895ae5b36a30a85d21c55157426a5371bd60f70a6f7af9a3edb15"},
-    {file = "cipheydists-0.1.3.tar.gz", hash = "sha256:54f913171d96e70d05348406bbb497cb32c25f31398a0aca7eb006d20110c852"},
+    {file = "cipheydists-0.3.34-py3-none-any.whl", hash = "sha256:9b741009b3c524d894b1e6a992cfe6749f58b1528bbf857f221ef7da75cf6d33"},
+    {file = "cipheydists-0.3.34.tar.gz", hash = "sha256:cc78ad67cd2742ed59cd8cc3b95a92658772f1b6a2a4475dba997cc675d2241d"},
 ]
 unicode = [
     {file = "unicode-2.7-py2.py3-none-any.whl", hash = "sha256:50ffc265ef115e420194338879b8ca260b0d78a1c91e149cc36a3a33f1341adc"},
