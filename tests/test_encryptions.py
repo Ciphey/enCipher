@@ -1,8 +1,8 @@
-import src.encipher_crypto
+from src import enciphey
 import base64
 import binascii
 
-obj = src.encipher_crypto.encipher_crypto()
+obj = enciphey.encipher_crypto()
 
 
 def test_base64():
